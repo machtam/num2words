@@ -33,7 +33,7 @@ CONVERTER_CLASSES = {
     'fr_CH': lang_FR_CH.Num2Word_FR_CH(),
     'fr_BE': lang_FR_BE.Num2Word_FR_BE(),
     'fr_DZ': lang_FR_DZ.Num2Word_FR_DZ(),
-    'fr_TN': lang_FR_DZ.Num2Word_FR_TN(),
+    'fr_TN': lang_FR_TN.Num2Word_FR_TN(),
     'de': lang_DE.Num2Word_DE(),
     'fi': lang_FI.Num2Word_FI(),
     'es': lang_ES.Num2Word_ES(),
