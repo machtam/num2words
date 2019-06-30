@@ -15,8 +15,13 @@
 # Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston,
 # MA 02110-1301 USA
 
+from __future__ import division
 from __future__ import unicode_literals
+
+
 from .lang_FR import Num2Word_FR
+from .currency_2 import parse_currency_parts, prefix_currency
+
 
 class Num2Word_FR_TN(Num2Word_FR):
 
@@ -24,19 +29,29 @@ class Num2Word_FR_TN(Num2Word_FR):
 
     def setup(self):
         Num2Word_FR.setup(self)
-        self.precision = 3
-
-    def to_currency(self, val, currency='TND', cents=True, seperator=',',
+        self.precision = 1
+    
+    CURRENCY_FORMS = {
+        'DIN': (('dinard', 'dinards'), ('millime', 'millimes')),
+        'EUR': (('euro', 'euros'), ('centime', 'centimes')),
+        'USD': (('dollar', 'dollars'), ('cent', 'cents')),
+        'FRF': (('franc', 'francs'), ('centime', 'centimes')),
+        'GBP': (('livre', 'livres'), ('penny', 'pence')),
+        'CNY': (('yuan', 'yuans'), ('fen', 'jiaos')),
+    }
+    
+    def to_currency(self, val, currency='DIN', cents=True, separator=' et',
                     adjective=False):
         """
         Args:
             val: Numeric value
             currency (str): Currency code
             cents (bool): Verbose cents
-            seperator (str): Cent seperator
+            separator (str): Cent separator
             adjective (bool): Prefix currency name with adjective
         Returns:
             str: Formatted string
+
         """
         left, right, is_negative = parse_currency_parts(val)
 
@@ -59,13 +74,7 @@ class Num2Word_FR_TN(Num2Word_FR):
             minus_str,
             self.to_cardinal(left),
             self.pluralize(left, cr1),
-            seperator,
+            separator,
             cents_str,
             self.pluralize(right, cr2)
-        )
-
-    def to_currency(self, val, longval=True, cents=True, jointxt="et"):
-        return self.to_splitnum(
-            val, precision=3, hightxt="dinar/s", lowtxt="millime/s", divisor=1,
-            jointxt=jointxt, longval=longval, cents=cents
         )
