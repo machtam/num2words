@@ -32,7 +32,7 @@ class Num2Word_FR_TN(Num2Word_FR):
         self.precision = 1
     
     CURRENCY_FORMS = {
-        'DIN': (('dinard', 'dinards'), ('millime', 'millimes')),
+        'TND': (('dinard', 'dinards'), ('millime', 'millimes')),
         'EUR': (('euro', 'euros'), ('centime', 'centimes')),
         'USD': (('dollar', 'dollars'), ('cent', 'cents')),
         'FRF': (('franc', 'francs'), ('centime', 'centimes')),
@@ -40,7 +40,7 @@ class Num2Word_FR_TN(Num2Word_FR):
         'CNY': (('yuan', 'yuans'), ('fen', 'jiaos')),
     }
     
-    def to_currency(self, val, currency='DIN', cents=True, separator=' et',
+    def to_currency(self, val, currency='TND', cents=True, separator=' et',
                     adjective=False):
         """
         Args:

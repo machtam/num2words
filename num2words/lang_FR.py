@@ -25,6 +25,7 @@ class Num2Word_FR(Num2Word_EU):
         'EUR': (('euro', 'euros'), ('centime', 'centimes')),
         'USD': (('dollar', 'dollars'), ('cent', 'cents')),
         'FRF': (('franc', 'francs'), ('centime', 'centimes')),
+	'CHF': (('franc', 'francs'), ('centime', 'centimes')),
         'GBP': (('livre', 'livres'), ('penny', 'pence')),
         'CNY': (('yuan', 'yuans'), ('fen', 'jiaos')),
     }

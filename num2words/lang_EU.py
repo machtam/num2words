@@ -31,6 +31,7 @@ class Num2Word_EU(Num2Word_Base):
         'EEK': (('kroon', 'kroons'), ('sent', 'senti')),
         'EUR': (('euro', 'euro'), GENERIC_CENTS),
         'GBP': (('pound sterling', 'pounds sterling'), ('penny', 'pence')),
+	'CHF': (('franc', 'francs'), ('centime', 'centimes')),
         # replaced by EUR
         'LTL': (('litas', 'litas'), GENERIC_CENTS),
         # replaced by EUR
