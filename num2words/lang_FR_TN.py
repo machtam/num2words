@@ -32,7 +32,7 @@ class Num2Word_FR_TN(Num2Word_FR):
         self.precision = 1
     
     CURRENCY_FORMS = {
-        'TND': (('dinard', 'dinards'), ('millime', 'millimes')),
+        'TND': (('dinar', 'dinars'), ('millime', 'millimes')),
         'EUR': (('euro', 'euros'), ('centime', 'centimes')),
         'USD': (('dollar', 'dollars'), ('cent', 'cents')),
         'FRF': (('franc', 'francs'), ('centime', 'centimes')),
